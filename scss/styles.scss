@@ -1,0 +1,190 @@
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;700&display=swap');
+// variables
+$raleway: 'Raleway';
+$body-font-family: 'Open Sans';
+body {
+    background: #1B2330;
+    color: #fff;
+}
+h1, h2, h3, h4, h5, .btn {
+    font-family: $raleway;
+}
+h1 {
+    line-height: 3.5rem;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 22px;
+    font-family: $raleway;
+    font-weight: 600;
+}
+
+p {
+    font-family: $body-font-family;
+}
+.container {
+    padding: 4rem 0;
+    max-width: 1140px;
+}
+
+.flex {
+    display: flex;
+}
+
+.navbar {
+    .navbar-nav {
+        .nav-link {
+            font-family: $raleway;
+            font-weight: 600;
+            color: #fff;
+            padding: .5em 4em;
+            font-size: 22px;
+            &:hover {
+                color: #8DA6FF;
+                text-decoration: underline;
+            }
+        }
+        .btn {
+            font-family: $raleway;
+            font-weight: 600;
+            font-size: 22px;
+            &:hover {
+                background-color: #d4d5da;
+            }
+        }
+        .dashboard {
+            padding: 0.5em 4em;
+        }
+        img {
+            border-radius: 90px;
+            border: 2px solid #fff;
+            height: 100px;
+            width: auto;
+            transform: rotate(10deg);
+        }
+    }
+}
+.intro {
+    .row {
+        margin-bottom: -40px;
+        margin-top: 25px;
+        .intro_headline {
+            font-size: 64px;
+            width: 46%;
+        }
+        .intro_blurb {
+            font-size: 20px;
+            margin: 2.5rem 0;
+            width: 85%;
+        }
+        .btn {
+            background: linear-gradient(0.45turn, #E16363 0%, #334ca7 70%);
+            border: none;
+            border-radius: 22px;
+            padding: 10px 40px;
+            font-weight: 600;
+            &:hover {
+                background: #334ca7;
+                transition: all 1s;
+            }
+        }
+    }
+}
+.section_wrapper {
+    background-image: url('/images/wave-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 8rem;
+    .features {
+        margin-top: -136px;
+        .section_title {
+            text-align: center;
+            margin: 180px 0 65px 0;
+        }
+        .row {
+            display: flex;
+            justify-content: space-evenly;
+            .card {
+                background-color: #181F2B;
+                border: 2px solid #5F6168;
+                border-radius: 18px;
+                text-align: center;
+                padding: 30px 10px 10px 10px;
+                margin-bottom: 60px;
+                .card-img {
+                    height: 76px;
+                    width: 100%;
+                }
+                .card-title {
+                    margin-bottom: 1.5rem;
+                }
+                .card-text {
+                    font-size: 14px;
+                }
+                &:hover {
+                    border: 2px solid #8DA6FF;
+                }
+            }
+        }
+    }
+}
+
+.faq {
+    background-color: #0B1524;
+    height: 30vh;
+    .container {
+        position: relative;
+        .hold-me {
+            position: absolute;
+            background-color: #1B2330;
+            padding: 3rem 4rem;
+            border-radius: 15px;
+            top: -122px;
+            .intro-content {
+                text-align: center;
+            }
+            .accordions {
+                display: flex;
+                .accordion-item {
+                    background-color: #0B1524;
+                    border: none;
+                    margin-bottom: 0.5rem;
+                    .accordion-header {
+                        .accordion-button {
+                            background-color: #0B1524;
+                            color: #fff;
+                        }
+                    }
+                    .accordion-body {
+                        background-color: #0B1524;
+                    }
+                }
+            }
+        }
+        &::before {
+            content: url('/images/plug.svg');
+            position: absolute;
+            height: 50px;
+            width: auto;
+            display: block;
+            z-index: 2;
+            left: -7%;
+            top: -160%;
+
+        }
+    }
+}
+
+footer {
+    max-width: 1140px;
+}
