@@ -11191,6 +11191,7 @@ p {
 .intro .row {
   margin-bottom: -40px;
   margin-top: 25px;
+  position: relative;
 }
 .intro .row .intro_headline {
   font-size: 64px;
@@ -11211,6 +11212,19 @@ p {
 .intro .row .btn:hover {
   background: #334ca7;
   transition: all 1s;
+}
+.intro .row img {
+  animation: MoveUpDown 7s linear infinite;
+  position: absolute;
+  bottom: 0;
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
 }
 
 .section_wrapper {
