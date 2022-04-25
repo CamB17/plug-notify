@@ -15,6 +15,10 @@ h1 {
     line-height: 3.5rem;
     font-size: 64px;
     font-weight: 700;
+
+    @include media-breakpoint-down(md) {
+        font-size: 34px !important;
+    }
 }
 
 h2 {
@@ -34,6 +38,9 @@ p {
 .container {
     padding: 4rem 0;
     max-width: 1140px;
+    @include media-breakpoint-down(md) {
+        padding: 1rem 0;
+    }
 }
 
 .flex {
@@ -72,45 +79,79 @@ p {
             transform: rotate(10deg);
         }
     }
+    .navbar-brand {
+        
+        img {
+            border-radius: 90px;
+            border: 2px solid #fff;
+            height: 100px;
+            width: auto;
+            transform: rotate(10deg);
+        }
+    }
 }
 .intro {
     .row {
         margin-bottom: -40px;
         margin-top: 25px;
         position: relative;
-        .intro_headline {
-            font-size: 64px;
-            width: 46%;
-        }
-        .intro_blurb {
-            font-size: 20px;
-            margin: 2.5rem 0;
-            width: 85%;
-        }
-        .btn {
-            background: linear-gradient(0.45turn, #E16363 0%, #334ca7 70%);
-            border: none;
-            border-radius: 22px;
-            padding: 10px 40px;
-            font-weight: 600;
-            &:hover {
-                background: #334ca7;
-                transition: all 1s;
+        .intro-content {
+            @include media-breakpoint-down(md) {
+                order: 2;
+                text-align: center;
+            }
+            .intro_headline {
+                font-size: 64px;
+                width: 46%;
+    
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
+            }
+            .intro_blurb {
+                font-size: 20px;
+                margin: 2.5rem 0;
+                width: 85%;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
+            }
+            .btn {
+                background: linear-gradient(0.45turn, #E16363 0%, #334ca7 70%);
+                border: none;
+                border-radius: 22px;
+                padding: 10px 40px;
+                font-weight: 600;
+                &:hover {
+                    background: #334ca7;
+                    transition: all 1s;
+                }
             }
         }
-        img {
-            animation: MoveUpDown 7s linear infinite;
-            position: absolute;
-            bottom: 0;
+        .image {
+            img {
+                animation: MoveUpDown 7s linear infinite;
+                position: absolute;
+                bottom: 0;
+    
+                @keyframes MoveUpDown {
+                    0%, 100% {
+                      transform: translateY(0);
+                    }
+                    50% {
+                      transform: translateY(-100px);
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    position: relative;
+                    animation: none;
+                    height: 156px;
+                }
+            }
 
-            @keyframes MoveUpDown {
-                0%, 100% {
-                  transform: translateY(0);
-                }
-                50% {
-                  transform: translateY(-100px);
-                }
-              }
+            @include media-breakpoint-down(md) {
+                text-align: center;
+            }
         }
     }
 }
@@ -152,11 +193,15 @@ p {
             }
         }
     }
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 0.5rem;
+    }
 }
 
 .faq {
     background-color: #0B1524;
-    height: 30vh;
+    height: 22vh;
     .container {
         position: relative;
         .hold-me {
@@ -165,11 +210,13 @@ p {
             padding: 3rem 4rem;
             border-radius: 15px;
             top: -122px;
+
             .intro-content {
                 text-align: center;
             }
             .accordions {
                 display: flex;
+
                 .accordion-item {
                     background-color: #0B1524;
                     border: none;
@@ -187,7 +234,7 @@ p {
             }
         }
         &::before {
-            content: url('/images/plug.svg');
+            content: url('/images/plug.png');
             position: absolute;
             height: 50px;
             width: auto;
@@ -195,11 +242,41 @@ p {
             z-index: 2;
             left: -7%;
             top: -160%;
+        }
 
+        @include media-breakpoint-down(md) {
+            &::before {
+                top: -58px;
+                transform: scale(.5);
+            }
+            .hold-me {
+                top: 0;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 100%;
+        .container {
+            .hold-me {
+                position: relative;
+                padding: 2rem 1rem;
+                .accordions {
+                    flex-direction: column;
+                    .me-3 {
+                        margin: auto !important;
+                    }
+                }
+            }
         }
     }
 }
 
 footer {
     max-width: 1140px;
+    .right {
+        .social-icon {
+            height: 40px;
+        }
+    }
 }
