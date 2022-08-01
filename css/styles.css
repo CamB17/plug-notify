@@ -11120,12 +11120,25 @@ textarea.form-control-lg {
   }
 }
 body {
-  background: #1B2330;
+  background: #1b2330;
   color: #fff;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .btn {
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.btn {
   font-family: "Raleway";
+}
+
+p {
+  font-family: "Open Sans";
 }
 
 h1, .h1 {
@@ -11146,12 +11159,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 22px;
-  font-family: "Raleway";
   font-weight: 600;
-}
-
-p {
-  font-family: "Open Sans";
 }
 
 .container {
@@ -11164,10 +11172,6 @@ p {
   }
 }
 
-.flex {
-  display: flex;
-}
-
 .navbar .navbar-nav .nav-link {
   font-family: "Raleway";
   font-weight: 600;
@@ -11176,7 +11180,7 @@ p {
   font-size: 22px;
 }
 .navbar .navbar-nav .nav-link:hover {
-  color: #8DA6FF;
+  color: #8da6ff;
   text-decoration: underline;
 }
 .navbar .navbar-nav .btn {
@@ -11236,7 +11240,7 @@ p {
   }
 }
 .intro .row .intro-content .btn {
-  background: linear-gradient(0.45turn, #E16363 0%, #334ca7 70%);
+  background: linear-gradient(0.45turn, #e16363 0%, #334ca7 70%);
   border: none;
   border-radius: 22px;
   padding: 10px 40px;
@@ -11262,8 +11266,7 @@ p {
 @media (max-width: 767.98px) {
   .intro .row .image img {
     position: relative;
-    animation: none;
-    height: 156px;
+    height: 100px;
   }
 }
 @media (max-width: 767.98px) {
@@ -11289,10 +11292,17 @@ p {
 .section_wrapper .features .row {
   display: flex;
   justify-content: space-evenly;
+  --bs-gutter-x: 0rem;
+}
+@media (max-width: 767.98px) {
+  .section_wrapper .features .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 .section_wrapper .features .row .card {
-  background-color: #181F2B;
-  border: 2px solid #5F6168;
+  background-color: #181f2b;
+  border: 2px solid #5f6168;
   border-radius: 18px;
   text-align: center;
   padding: 30px 10px 10px 10px;
@@ -11309,7 +11319,7 @@ p {
   font-size: 14px;
 }
 .section_wrapper .features .row .card:hover {
-  border: 2px solid #8DA6FF;
+  border: 2px solid #8da6ff;
 }
 @media (max-width: 767.98px) {
   .section_wrapper {
@@ -11318,15 +11328,20 @@ p {
 }
 
 .faq {
-  background-color: #0B1524;
+  background-color: #0b1524;
   height: 22vh;
 }
 .faq .container {
   position: relative;
 }
+@media (max-width: 767.98px) {
+  .faq .container {
+    justify-content: center;
+  }
+}
 .faq .container .hold-me {
   position: absolute;
-  background-color: #1B2330;
+  background-color: #1b2330;
   padding: 3rem 4rem;
   border-radius: 15px;
   top: -122px;
@@ -11338,16 +11353,16 @@ p {
   display: flex;
 }
 .faq .container .hold-me .accordions .accordion-item {
-  background-color: #0B1524;
+  background-color: #0b1524;
   border: none;
   margin-bottom: 0.5rem;
 }
 .faq .container .hold-me .accordions .accordion-item .accordion-header .accordion-button {
-  background-color: #0B1524;
+  background-color: #0b1524;
   color: #fff;
 }
 .faq .container .hold-me .accordions .accordion-item .accordion-body {
-  background-color: #0B1524;
+  background-color: #0b1524;
 }
 .faq .container::before {
   content: url("/images/plug.png");
@@ -11389,4 +11404,31 @@ footer {
 }
 footer .right .social-icon {
   height: 40px;
+  transform: rotate(0deg);
+  transition: transform 0.25s;
+}
+footer .right .social-icon:first-child {
+  margin-right: 1rem;
+}
+footer .right .social-icon:hover {
+  transform: rotate(360deg);
+  transition: transform 0.25s;
+}
+footer .copyright {
+  text-align: left;
+}
+footer .copyright a {
+  color: #fff;
+}
+footer .copyright a:hover {
+  color: #8da6ff;
+}
+footer .copyright .right {
+  text-align: right;
+}
+footer .built-by a {
+  color: #fff;
+}
+footer .built-by a:hover {
+  color: #8da6ff;
 }

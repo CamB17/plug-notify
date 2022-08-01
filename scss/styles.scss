@@ -1,16 +1,34 @@
 // import bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;700&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;700&display=swap");
 // variables
-$raleway: 'Raleway';
-$body-font-family: 'Open Sans';
+$ff-header: "Raleway";
+$ff-body: "Open Sans";
+$light_purple: #8da6ff;
+$blue: #334ca7;
+$medium-blue: #1b2330;
+$dark-blue: #181f2b;
+$gray: #5f6168;
+$dark-bg: #0b1524;
+$white: #fff;
+
 body {
-    background: #1B2330;
+    background: $medium-blue;
     color: #fff;
 }
-h1, h2, h3, h4, h5, .btn {
-    font-family: $raleway;
+h1,
+h2,
+h3,
+h4,
+h5,
+.btn {
+    font-family: $ff-header;
 }
+
+p {
+    font-family: $ff-body;
+}
+
 h1 {
     line-height: 3.5rem;
     font-size: 64px;
@@ -28,13 +46,9 @@ h2 {
 
 h3 {
     font-size: 22px;
-    font-family: $raleway;
     font-weight: 600;
 }
 
-p {
-    font-family: $body-font-family;
-}
 .container {
     padding: 4rem 0;
     max-width: 1140px;
@@ -43,25 +57,21 @@ p {
     }
 }
 
-.flex {
-    display: flex;
-}
-
 .navbar {
     .navbar-nav {
         .nav-link {
-            font-family: $raleway;
+            font-family: $ff-header;
             font-weight: 600;
-            color: #fff;
-            padding: .5em 4em;
+            color: $white;
+            padding: 0.5em 4em;
             font-size: 22px;
             &:hover {
-                color: #8DA6FF;
+                color: $light_purple;
                 text-decoration: underline;
             }
         }
         .btn {
-            font-family: $raleway;
+            font-family: $ff-header;
             font-weight: 600;
             font-size: 22px;
             &:hover {
@@ -73,17 +83,16 @@ p {
         }
         img {
             border-radius: 90px;
-            border: 2px solid #fff;
+            border: 2px solid $white;
             height: 100px;
             width: auto;
             transform: rotate(10deg);
         }
     }
     .navbar-brand {
-        
         img {
             border-radius: 90px;
-            border: 2px solid #fff;
+            border: 2px solid $white;
             height: 100px;
             width: auto;
             transform: rotate(10deg);
@@ -103,7 +112,7 @@ p {
             .intro_headline {
                 font-size: 64px;
                 width: 46%;
-    
+
                 @include media-breakpoint-down(md) {
                     width: 100%;
                 }
@@ -117,13 +126,13 @@ p {
                 }
             }
             .btn {
-                background: linear-gradient(0.45turn, #E16363 0%, #334ca7 70%);
+                background: linear-gradient(0.45turn, #e16363 0%, #334ca7 70%);
                 border: none;
                 border-radius: 22px;
                 padding: 10px 40px;
                 font-weight: 600;
                 &:hover {
-                    background: #334ca7;
+                    background: $blue;
                     transition: all 1s;
                 }
             }
@@ -133,19 +142,19 @@ p {
                 animation: MoveUpDown 7s linear infinite;
                 position: absolute;
                 bottom: 0;
-    
+
                 @keyframes MoveUpDown {
-                    0%, 100% {
-                      transform: translateY(0);
+                    0%,
+                    100% {
+                        transform: translateY(0);
                     }
                     50% {
-                      transform: translateY(-100px);
+                        transform: translateY(-100px);
                     }
                 }
                 @include media-breakpoint-down(md) {
                     position: relative;
-                    animation: none;
-                    height: 156px;
+                    height: 100px;
                 }
             }
 
@@ -156,7 +165,7 @@ p {
     }
 }
 .section_wrapper {
-    background-image: url('/images/wave-bg.svg');
+    background-image: url("/images/wave-bg.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -170,9 +179,15 @@ p {
         .row {
             display: flex;
             justify-content: space-evenly;
+            --bs-gutter-x: 0rem;
+
+            @include media-breakpoint-down(md) {
+                margin-right: 0;
+                margin-left: 0;
+            }
             .card {
-                background-color: #181F2B;
-                border: 2px solid #5F6168;
+                background-color: $dark-blue;
+                border: 2px solid $gray;
                 border-radius: 18px;
                 text-align: center;
                 padding: 30px 10px 10px 10px;
@@ -188,7 +203,7 @@ p {
                     font-size: 14px;
                 }
                 &:hover {
-                    border: 2px solid #8DA6FF;
+                    border: 2px solid $light_purple;
                 }
             }
         }
@@ -200,13 +215,17 @@ p {
 }
 
 .faq {
-    background-color: #0B1524;
+    background-color: $dark-bg;
     height: 22vh;
     .container {
         position: relative;
+
+        @include media-breakpoint-down(md) {
+            justify-content: center;
+        }
         .hold-me {
             position: absolute;
-            background-color: #1B2330;
+            background-color: $medium-blue;
             padding: 3rem 4rem;
             border-radius: 15px;
             top: -122px;
@@ -218,23 +237,23 @@ p {
                 display: flex;
 
                 .accordion-item {
-                    background-color: #0B1524;
+                    background-color: $dark-bg;
                     border: none;
                     margin-bottom: 0.5rem;
                     .accordion-header {
                         .accordion-button {
-                            background-color: #0B1524;
-                            color: #fff;
+                            background-color: $dark-bg;
+                            color: $white;
                         }
                     }
                     .accordion-body {
-                        background-color: #0B1524;
+                        background-color: $dark-bg;
                     }
                 }
             }
         }
         &::before {
-            content: url('/images/plug.png');
+            content: url("/images/plug.png");
             position: absolute;
             height: 50px;
             width: auto;
@@ -247,7 +266,7 @@ p {
         @include media-breakpoint-down(md) {
             &::before {
                 top: -58px;
-                transform: scale(.5);
+                transform: scale(0.5);
             }
             .hold-me {
                 top: 0;
@@ -277,6 +296,37 @@ footer {
     .right {
         .social-icon {
             height: 40px;
+            transform: rotate(0deg);
+            transition: transform 0.25s;
+
+            &:first-child {
+                margin-right: 1rem;
+            }
+            &:hover {
+                transform: rotate(360deg);
+                transition: transform 0.25s;
+            }
+        }
+    }
+    .copyright {
+        text-align: left;
+        a {
+            color: $white;
+            &:hover {
+                color: $light_purple;
+            }
+        }
+
+        .right {
+            text-align: right;
+        }
+    }
+    .built-by {
+        a {
+            color: $white;
+            &:hover {
+                color: $light_purple;
+            }
         }
     }
 }
